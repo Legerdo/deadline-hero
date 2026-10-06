@@ -1,0 +1,76 @@
+{
+	"_comment": "Voiced lines. 'text' is shown in game, 'tts' (optional) is sent to Fish Audio with emotion cues. Audio is cached in assets/audio/voice/<id>.ogg; the game works without it.",
+
+	"title_call": {"who": "announcer", "text": "데드라인 히어로!", "tts": "[excited] 데드라인 히어로!"},
+	"s1_start": {"who": "announcer", "text": "스테이지 원! 새싹 초원!", "tts": "[excited] 스테이지 원! 새싹 초원!"},
+	"s2_start": {"who": "announcer", "text": "스테이지 투! 끊어진 다리!", "tts": "[excited] 스테이지 투! 끊어진 다리!"},
+	"s3_start": {"who": "announcer", "text": "스테이지 쓰리! 어둠의 광산!", "tts": "[excited] 스테이지 쓰리! 어둠의 광산!"},
+	"s4_start": {"who": "announcer", "text": "스테이지 포! 유령 저택!", "tts": "[excited] 스테이지 포! 유령 저택!"},
+	"s5_start": {"who": "announcer", "text": "스테이지 파이브! 거울 신전!", "tts": "[excited] 스테이지 파이브! 거울 신전!"},
+	"s6_start": {"who": "announcer", "text": "스테이지 식스! 불꽃 화산!", "tts": "[excited] 스테이지 식스! 불꽃 화산!"},
+	"s7_start": {"who": "announcer", "text": "파이널 스테이지! 종말의 시계탑!", "tts": "[dramatic] 파이널 스테이지! 종말의 시계탑!"},
+	"go": {"who": "announcer", "text": "고!", "tts": "[shouting] 레디, 고!"},
+	"count_5": {"who": "announcer", "text": "다섯!", "tts": "[urgent] 다섯!"},
+	"count_4": {"who": "announcer", "text": "넷!", "tts": "[urgent] 넷!"},
+	"count_3": {"who": "announcer", "text": "셋!", "tts": "[urgent] 셋!"},
+	"count_2": {"who": "announcer", "text": "둘!", "tts": "[urgent] 둘!"},
+	"count_1": {"who": "announcer", "text": "하나!", "tts": "[shouting] 하나!"},
+	"timeup": {"who": "announcer", "text": "타임 업!", "tts": "[shouting] 타임 업!"},
+	"clear": {"who": "announcer", "text": "스테이지 클리어!", "tts": "[excited] 스테이지 클리어!"},
+
+	"count_10": {"who": "chocho", "text": "10초 남았다냥! 서둘러!", "tts": "[panicked] 십 초 남았다냥! 서둘러!"},
+	"chocho_rewind_1": {"who": "chocho", "text": "되감는다냥! 이번엔 알고 있지?", "tts": "[determined] 되감는다냥! 이번엔 알고 있지?"},
+	"chocho_rewind_2": {"who": "chocho", "text": "시간아, 거꾸로 흘러라냥!", "tts": "[excited] 시간아, 거꾸로 흘러라냥!"},
+	"chocho_rewind_3": {"who": "chocho", "text": "한 번 더다냥! 기억은 남아 있다냥!", "tts": "[playful] 한 번 더다냥! 기억은 남아 있다냥!"},
+	"chocho_loop_1": {"who": "chocho", "text": "이번엔 알고 있지냥? 같은 실수는 없다냥!", "tts": "[confident] 이번엔 알고 있지냥? 같은 실수는 없다냥!"},
+	"chocho_loop_2": {"who": "chocho", "text": "메아리가 길을 기억하고 있다냥. 따라가 봐!", "tts": "[cheerful] 메아리가 길을 기억하고 있다냥. 따라가 봐!"},
+	"chocho_loop_3": {"who": "chocho", "text": "시간은 없어도 기억은 남았다냥!", "tts": "[determined] 시간은 없어도 기억은 남았다냥!"},
+	"chocho_shop": {"who": "chocho", "text": "냥! 여기선 골드를 시간으로 바꿔준다냥. 대신… 살수록 비싸진다냥!", "tts": "[cheerful] 냥! 여기선 골드를 시간으로 바꿔준다냥. [whispering] 대신… 살수록 비싸진다냥!"},
+	"chocho_buy": {"who": "chocho", "text": "시간 추가다냥!", "tts": "[happy] 시간 추가다냥!"},
+	"chocho_down": {"who": "chocho", "text": "리오! 일어나라냥!", "tts": "[worried] 리오! 일어나라냥!"},
+	"echo_allies": {"who": "chocho", "text": "지금까지 실패한 리오들이 전부 함께 싸운다냥!", "tts": "[excited] 지금까지 실패한 리오들이 전부 함께 싸운다냥!"},
+	"lava_warn": {"who": "chocho", "text": "용암이 차오른다냥! 높은 곳으로!", "tts": "[panicked] 용암이 차오른다냥! 높은 곳으로!"},
+
+	"pro_1": {"who": "narrator", "text": "시계탑의 대륙 크로노베일. 이 세계의 시간은 커다란 종이 지킨다.", "tts": "[calm] 시계탑의 대륙 크로노베일. 이 세계의 시간은 커다란 종이 지킨다."},
+	"pro_2": {"who": "narrator", "text": "그런데 어느 날, 마왕 제로가 종에 저주를 걸었다. 종이 울리는 순간, 세계는 멈춘다.", "tts": "[serious] 그런데 어느 날, 마왕 제로가 종에 저주를 걸었다. 종이 울리는 순간, 세계는 멈춘다."},
+	"zero_intro": {"who": "zero", "text": "후후… 60초. 너희에게 남은 시간은 그뿐이다.", "tts": "[sinister] 후후… 육십 초. 너희에게 남은 시간은 그뿐이다."},
+	"chocho_intro": {"who": "chocho", "text": "냥! 일어나라냥, 리오! 난 시간 고양이 초초. 종이 울리면 내가 시간을 되감아 줄 수 있다냥.", "tts": "[excited] 냥! 일어나라냥, 리오! 난 시간 고양이 초초. 종이 울리면 내가 시간을 되감아 줄 수 있다냥."},
+	"hero_intro": {"who": "hero", "text": "되감아…? 그럼 몇 번이고 다시 할 수 있다는 거야?", "tts": "[surprised] 되감아…? 그럼 몇 번이고 다시 할 수 있다는 거야?"},
+	"chocho_intro2": {"who": "chocho", "text": "몸은 되돌아가도, 네가 본 것과 알아낸 것은 남는다냥. 기억이야말로 최강의 무기다냥!", "tts": "[confident] 몸은 되돌아가도, 네가 본 것과 알아낸 것은 남는다냥. 기억이야말로 최강의 무기다냥!"},
+
+	"s1_intro_1": {"who": "chocho", "text": "여긴 새싹 초원이다냥. 킹 슬라임이 마을의 시간 톱니를 삼켜 버렸다냥!", "tts": "[excited] 여긴 새싹 초원이다냥. 킹 슬라임이 마을의 시간 톱니를 삼켜 버렸다냥!"},
+	"s1_intro_2": {"who": "chocho", "text": "지금의 너로는 무리다냥. 몬스터를 잡아 레벨을 올리고, 장비도 사야 한다냥!", "tts": "[serious] 지금의 너로는 무리다냥. 몬스터를 잡아 레벨을 올리고, 장비도 사야 한다냥!"},
+	"s1_elder": {"who": "elder", "text": "용사여, 잘 와 주었네! 킹 슬라임이 마을의 시간 톱니를 삼켜 버렸어.", "tts": "[relieved] 용사여, 잘 와 주었네! 킹 슬라임이 마을의 시간 톱니를 삼켜 버렸어."},
+	"s1_boss": {"who": "king", "text": "뿌루루! 이 초원의 시간은 전부 짐의 것이다! 톱니는 절대 못 돌려준다!", "tts": "[laughing] 뿌루루! 이 초원의 시간은 전부 짐의 것이다! 톱니는 절대 못 돌려준다!"},
+
+	"s2_intro_1": {"who": "chocho", "text": "강 건너에 트롤이 산다냥. 녀석이 다리를 부숴서 마을이 둘로 갈라졌다냥!", "tts": "[worried] 강 건너에 트롤이 산다냥. 녀석이 다리를 부숴서 마을이 둘로 갈라졌다냥!"},
+	"s2_carpenter": {"who": "carpenter", "text": "다리를 고치려면 판자가 세 장 필요해! 한 장은 내가 줄게. 나머지는 고블린 녀석들이 훔쳐 갔지 뭐야.", "tts": "[frustrated] 다리를 고치려면 판자가 세 장 필요해! 한 장은 내가 줄게. 나머지는 고블린 녀석들이 훔쳐 갔지 뭐야."},
+	"s2_boss": {"who": "troll", "text": "크아아! 다리는 내가 부쉈다! 아무도 못 건넌다!", "tts": "[angry] 크아아! 다리는 내가 부쉈다! 아무도 못 건넌다!"},
+
+	"s3_intro_1": {"who": "chocho", "text": "앞이 캄캄하다냥… 하지만 한 번 지나간 길은 지도에 남는다냥!", "tts": "[nervous] 앞이 캄캄하다냥… [confident] 하지만 한 번 지나간 길은 지도에 남는다냥!"},
+	"s3_miner": {"who": "miner", "text": "골렘 녀석은 땅을 내리친 직후에만 가슴의 핵이 열린다네. 그때만 칼이 먹혀!", "tts": "[serious] 골렘 녀석은 땅을 내리친 직후에만 가슴의 핵이 열린다네. 그때만 칼이 먹혀!"},
+
+	"s4_intro_1": {"who": "chocho", "text": "으스스하다냥… 백작부인에게는 칼이 안 통한다던데?", "tts": "[scared] 으스스하다냥… 백작부인에게는 칼이 안 통한다던데?"},
+	"s4_butler": {"who": "butler", "text": "아가씨의 로켓이 화랑에 잠들어 있습니다. 두 발판을 동시에 밟아야 문이 열리지요. 과거의 당신과 함께라면, 어쩌면.", "tts": "[whispering] 아가씨의 로켓이 화랑에 잠들어 있습니다. 두 발판을 동시에 밟아야 문이 열리지요. 과거의 당신과 함께라면, 어쩌면."},
+	"s4_boss": {"who": "countess", "text": "누구신가요… 제 시간을 빼앗으러 오셨나요?", "tts": "[sad] 누구신가요… 제 시간을 빼앗으러 오셨나요?"},
+	"s4_peace": {"who": "countess", "text": "이건… 제 로켓… 이제야 기억났어요. 저는 줄곧 기다리고 있었던 거군요.", "tts": "[tearful] 이건… 제 로켓… 이제야 기억났어요. 저는 줄곧 기다리고 있었던 거군요."},
+
+	"s5_intro_1": {"who": "chocho", "text": "거울 기사는 앞모습만 보여 준다냥. 등을 노려라냥!", "tts": "[serious] 거울 기사는 앞모습만 보여 준다냥. 등을 노려라냥!"},
+	"s5_rival": {"who": "rival", "text": "흥, 거울 기사는 내가 쓰러뜨린다! 넌 뒤에서 구경이나 해!", "tts": "[arrogant] 흥, 거울 기사는 내가 쓰러뜨린다! 넌 뒤에서 구경이나 해!"},
+	"s5_boss": {"who": "knight", "text": "나의 앞모습만을 보아라. 등을 보일 일은 없다.", "tts": "[cold] 나의 앞모습만을 보아라. 등을 보일 일은 없다."},
+
+	"s6_intro_1": {"who": "chocho", "text": "화산이 들끓고 있다냥! 시간이 지나면 낮은 땅부터 용암에 잠긴다냥!", "tts": "[panicked] 화산이 들끓고 있다냥! 시간이 지나면 낮은 땅부터 용암에 잠긴다냥!"},
+	"s6_smith": {"who": "smith", "text": "화염검 사러 왔어? 서둘러, 이 대장간도 곧 용암에 잠겨!", "tts": "[urgent] 화염검 사러 왔어? 서둘러, 이 대장간도 곧 용암에 잠겨!"},
+	"s6_boss": {"who": "drake", "text": "감히 용암의 군주 앞에 서다니! 재가 되어라!", "tts": "[roaring] 감히 용암의 군주 앞에 서다니! 재가 되어라!"},
+
+	"s7_intro_1": {"who": "chocho", "text": "마지막이다냥. 90초 안에 제로를 쓰러뜨리고 종을 되찾는다냥!", "tts": "[determined] 마지막이다냥. 구십 초 안에 제로를 쓰러뜨리고 종을 되찾는다냥!"},
+	"s7_intro_2": {"who": "hero", "text": "지금까지의 실패가 전부 쌓여서 여기까지 왔어. 이번엔 끝낸다!", "tts": "[determined] 지금까지의 실패가 전부 쌓여서 여기까지 왔어. 이번엔 끝낸다!"},
+	"s7_boss": {"who": "zero", "text": "몇 번을 되감든 결말은 같다. 종은 반드시 울린다.", "tts": "[sinister] 몇 번을 되감든 결말은 같다. 종은 반드시 울린다."},
+	"zero_timestop": {"who": "zero", "text": "멈춰라, 시간이여.", "tts": "[menacing] 멈춰라, 시간이여."},
+	"zero_phase2": {"who": "zero", "text": "좋다… 모든 순간을 삼켜 주마!", "tts": "[angry] 좋다… 모든 순간을 삼켜 주마!"},
+
+	"end_zero": {"who": "zero", "text": "…시간은 흘러가 버리기에 아름답다, 인가. 끝까지 멈추지 않는구나, 인간은.", "tts": "[weak] …시간은 흘러가 버리기에 아름답다, 인가. 끝까지 멈추지 않는구나, 인간은."},
+	"end_chocho": {"who": "chocho", "text": "냥… 종이 다시 제대로 울리고 있다냥. 이제 되감을 필요는 없다냥.", "tts": "[gentle] 냥… 종이 다시 제대로 울리고 있다냥. 이제 되감을 필요는 없다냥."},
+	"end_hero": {"who": "hero", "text": "수없이 실패했지만… 실패한 나도 전부 여기까지 같이 와 줬어.", "tts": "[emotional] 수없이 실패했지만… 실패한 나도 전부 여기까지 같이 와 줬어."},
+	"end_narr": {"who": "narrator", "text": "메아리들은 빛이 되어 흩어졌다. 크로노베일에 다시 내일이 찾아왔다.", "tts": "[warm] 메아리들은 빛이 되어 흩어졌다. 크로노베일에 다시 내일이 찾아왔다."}
+}

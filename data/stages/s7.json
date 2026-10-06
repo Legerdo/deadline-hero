@@ -1,0 +1,399 @@
+{
+	"id": "s7",
+	"index": 7,
+	"name": "종말의 시계탑",
+	"subtitle": "마왕 제로",
+	"blurb": "90초의 마지막 모험. 세 개의 층을 올라 종의 방으로. 지금까지의 모든 실패가 메아리가 되어 함께 싸운다.",
+	"map": "res://data/maps/s7.txt",
+	"theme": "tower",
+	"time": 90,
+	"music": "tower",
+	"boss_music": "boss",
+	"rec_level": 10,
+	"camera_zones": [[8, 1, 47, 16], [6, 18, 49, 31], [6, 33, 49, 44]],
+	"final": true,
+	"echo_allies": true,
+	"tint": "f0f0ff",
+	"start": {
+		"gold": 20,
+		"weapon": "wood_sword"
+	},
+	"timeshop": {
+		"price": [
+			10,
+			25,
+			50,
+			90
+		],
+		"sec": 15
+	},
+	"markers": {
+		"M": {
+			"type": "npc",
+			"id": "merchant"
+		},
+		"N": {
+			"type": "npc",
+			"id": "chocho_npc"
+		},
+		"C": {
+			"type": "prop",
+			"kind": "statue"
+		},
+		"P": {
+			"type": "prop",
+			"kind": "sign",
+			"text": [
+				"↗ 2층 계단 (동쪽 끝)   종의 방은 2층 서쪽 계단 위"
+			]
+		},
+		"U": {
+			"type": "prop",
+			"kind": "warp",
+			"to": "2",
+			"do": [
+				[
+					"flag",
+					"floor2"
+				],
+				[
+					"respawn_here"
+				]
+			]
+		},
+		"V": {
+			"type": "prop",
+			"kind": "warp",
+			"to": "3",
+			"do": [
+				[
+					"flag",
+					"floor3"
+				],
+				[
+					"respawn_here"
+				]
+			]
+		},
+		"Z": {
+			"type": "prop",
+			"kind": "warp",
+			"to": "z",
+			"do": [
+				[
+					"unflag",
+					"floor2"
+				]
+			]
+		},
+		"2": {
+			"type": "point"
+		},
+		"3": {
+			"type": "point"
+		},
+		"z": {
+			"type": "point"
+		},
+		"t": {
+			"type": "prop",
+			"kind": "torch"
+		},
+		"X": {
+			"type": "prop",
+			"kind": "chest",
+			"id": "ch",
+			"give_list": [
+				[
+					[
+						"gold",
+						40
+					]
+				],
+				[
+					[
+						"item",
+						"herb",
+						2
+					]
+				],
+				[
+					[
+						"gold",
+						30
+					]
+				]
+			]
+		},
+		"*": {
+			"type": "prop",
+			"kind": "pickup",
+			"item": "star",
+			"icon": "star",
+			"know": "zero_hands"
+		},
+		"g": {
+			"type": "prop",
+			"kind": "pickup",
+			"item": "hourglass",
+			"icon": "hourglass",
+			"time": 10,
+			"why": "시계탑의 모래시계!"
+		},
+		"$": {
+			"type": "enemy",
+			"kind": "time_beetle",
+			"stats": {
+				"lv": 6
+			}
+		},
+		"e": {
+			"type": "enemy",
+			"kind": "tin_soldier",
+			"stats": {
+				"lv": 1
+			}
+		},
+		"E": {
+			"type": "enemy",
+			"kind": "tin_soldier",
+			"stats": {
+				"lv": 2
+			}
+		},
+		"k": {
+			"type": "enemy",
+			"kind": "tin_soldier",
+			"stats": {
+				"lv": 6
+			}
+		},
+		"K": {
+			"type": "enemy",
+			"kind": "tin_soldier",
+			"stats": {
+				"lv": 8
+			}
+		},
+		"j": {
+			"type": "enemy",
+			"kind": "skeleton",
+			"stats": {
+				"lv": 7
+			}
+		}
+	},
+	"npcs": {
+		"chocho_npc": {
+			"name": "초초",
+			"sprite": "npc_chocho",
+			"portrait": "chocho",
+			"pitch": 1.6,
+			"talk": [
+				{
+					"if": [
+						"met"
+					],
+					"lines": [
+						"지금까지의 실패는 전부 네 편이다냥. 종의 방에 가면 알게 된다냥!"
+					],
+					"do": [
+						[
+							"know",
+							"echo_final"
+						],
+						[
+							"item",
+							"herb",
+							1
+						]
+					]
+				},
+				{
+					"important": true,
+					"once": true,
+					"lines": [
+						"제로의 '시간 정지'는 보라색 섬광이 번쩍인 직후에 대시하면 피할 수 있다냥!",
+						"두 번째 모습에선 시곗바늘이 노랗게 빛날 때 닿으면 아프다냥. 바늘 사이로 파고들어라냥!"
+					],
+					"do": [
+						[
+							"know",
+							"zero_stop"
+						],
+						[
+							"know",
+							"zero_hands"
+						]
+					]
+				},
+				{
+					"lines": [
+						"위층 적은 강하다냥. 1층에서 몸을 풀고 올라가라냥!"
+					]
+				}
+			]
+		},
+		"merchant": {
+			"name": "행상 미나",
+			"sprite": "npc_merchant",
+			"portrait": "merchant",
+			"pitch": 1.25,
+			"shop": "s7shop",
+			"talk": [
+				{
+					"if": [
+						"met"
+					],
+					"lines": [
+						"마지막이지? …왜 알았냐고? 몰라, 그냥 느낌! 좋은 거 챙겨 가!"
+					],
+					"do": [
+						[
+							"shop",
+							"s7shop"
+						]
+					]
+				},
+				{
+					"lines": [
+						"여기까지 따라온 행상은 나뿐일걸? 최고급 물건만 모아 왔어!"
+					],
+					"do": [
+						[
+							"shop",
+							"s7shop"
+						]
+					]
+				}
+			]
+		}
+	},
+	"shops": {
+		"s7shop": {
+			"title": "미나의 마지막 행상",
+			"items": [
+				"crystal_sword",
+				"iron_sword",
+				"iron_armor",
+				"herb"
+			]
+		}
+	},
+	"boss": {
+		"kind": "zero",
+		"trigger": 100,
+		"know": "zero_seen",
+		"lines": [
+			{
+				"voice": "s7_boss"
+			}
+		]
+	},
+	"knowledge": {
+		"zero_stop": {
+			"text": "시간 정지: 보라색 섬광 직후 대시하면 피할 수 있다"
+		},
+		"zero_hands": {
+			"text": "2형태: 노랗게 빛나는 시곗바늘에 닿으면 피해. 붉은 선은 예고"
+		},
+		"echo_final": {
+			"text": "보스전에서 지금까지의 루프·쓰러짐 횟수만큼 메아리가 함께 싸운다"
+		},
+		"zero_seen": {
+			"text": "제로는 꼭대기 종의 방. 권장 Lv10"
+		},
+		"timeshop": {
+			"text": "고양이 석상: 골드를 시간으로 바꾼다. 부활 지점도 된다"
+		}
+	},
+	"goals": [
+		{
+			"if": [
+				"gold>=120",
+				"!watk>=16",
+				"!flag:floor2"
+			],
+			"text": "수정검(120G)을 살 수 있다! 1층의 미나에게",
+			"marker": "M"
+		},
+		{
+			"if": [
+				"gold>=30",
+				"!watk>=6",
+				"!flag:floor2"
+			],
+			"text": "철검을 사자! 1층의 미나에게",
+			"marker": "M"
+		},
+		{
+			"if": [
+				"!flag:floor2",
+				"!lv>=4"
+			],
+			"text": "1층 태엽 병정으로 몸을 풀고 동쪽 계단으로",
+			"marker": "U",
+			"grind": true
+		},
+		{
+			"if": [
+				"!flag:floor2"
+			],
+			"text": "동쪽 계단으로 2층에 오르자",
+			"marker": "U"
+		},
+		{
+			"if": [
+				"!flag:floor3",
+				"!lv>=9"
+			],
+			"text": "2층에서 레벨을 올리자 → 서쪽 계단 (권장 Lv10)",
+			"marker": "V",
+			"grind": true
+		},
+		{
+			"if": [
+				"!flag:floor3"
+			],
+			"text": "서쪽 계단으로 종의 방에!",
+			"marker": "V"
+		},
+		{
+			"text": "마왕 제로를 쓰러뜨려라!",
+			"marker": "boss"
+		}
+	],
+	"hints": [
+		{
+			"at": 0.5,
+			"text": "90초의 마지막 모험! 빛나는 계단으로 위층에 오른다",
+			"dur": 5,
+			"always": true
+		}
+	],
+	"tips": [
+		{
+			"if": [
+				"boss_seen"
+			],
+			"text": "보라색 섬광(시간 정지)이 보이면 즉시 대시! 메아리 동료가 계속 공격해 준다"
+		},
+		{
+			"if": [
+				"!flag:floor3"
+			],
+			"text": "1층 상점의 수정검(120G)을 노려 보자. 2층의 황금벌레는 골드가 많다"
+		}
+	],
+	"intro": [
+		{
+			"voice": "s7_intro_1"
+		},
+		{
+			"voice": "s7_intro_2"
+		}
+	],
+	"fail": {
+		"text": "종이 울렸다… 하지만 기억은 남는다."
+	}
+}

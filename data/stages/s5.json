@@ -1,0 +1,466 @@
+{
+	"id": "s5",
+	"index": 5,
+	"name": "거울 신전",
+	"subtitle": "앞모습만 비추는 기사",
+	"blurb": "정면 공격을 모두 튕겨내는 거울 기사. 잠긴 정문과 두 개의 레버, 그리고 무모한 라이벌. 등을 노려라.",
+	"map": "res://data/maps/s5.txt",
+	"theme": "temple",
+	"time": 60,
+	"music": "temple",
+	"boss_music": "boss",
+	"rec_level": 8,
+	"start": {
+		"gold": 15,
+		"weapon": "wood_sword"
+	},
+	"timeshop": {
+		"price": [
+			10,
+			25,
+			50,
+			90
+		],
+		"sec": 15
+	},
+	"speakers": {
+		"knight": {
+			"name": "거울 기사",
+			"portrait": "boss_mirror_knight",
+			"pitch": 0.7
+		}
+	},
+	"markers": {
+		"V": {
+			"type": "npc",
+			"id": "rival"
+		},
+		"v": {
+			"type": "npc",
+			"id": "rival_down",
+			"if": [
+				"flag:rival_left"
+			]
+		},
+		"M": {
+			"type": "npc",
+			"id": "merchant"
+		},
+		"C": {
+			"type": "prop",
+			"kind": "statue"
+		},
+		"K": {
+			"type": "prop",
+			"kind": "gate",
+			"id": "keygate",
+			"need": "key",
+			"shortcut": "keygate",
+			"locked": [
+				"hero: 신전의 정문. 열쇠 구멍이 있다… 회랑으로 곧장 이어지는 길이야."
+			]
+		},
+		"a": {
+			"type": "prop",
+			"kind": "gate",
+			"id": "gate_w",
+			"shortcut": "lever_w",
+			"locked": [
+				"hero: 서쪽 옆문. 어딘가의 장치로 열리는 것 같다."
+			]
+		},
+		"d": {
+			"type": "prop",
+			"kind": "gate",
+			"id": "gate_e",
+			"shortcut": "lever_e",
+			"locked": [
+				"hero: 동쪽 옆문. 어딘가의 장치로 열리는 것 같다."
+			]
+		},
+		"L": {
+			"type": "prop",
+			"kind": "lever",
+			"shortcut": "lever_w",
+			"opens": [
+				"gate_w"
+			],
+			"do": [
+				[
+					"know",
+					"lever_route"
+				]
+			]
+		},
+		"l": {
+			"type": "prop",
+			"kind": "lever",
+			"shortcut": "lever_e",
+			"opens": [
+				"gate_e"
+			],
+			"do": [
+				[
+					"know",
+					"lever_route"
+				]
+			]
+		},
+		"X": {
+			"type": "prop",
+			"kind": "chest",
+			"id": "ch",
+			"give_list": [
+				[
+					[
+						"gold",
+						30
+					]
+				],
+				[
+					[
+						"item",
+						"herb",
+						2
+					]
+				]
+			]
+		},
+		"*": {
+			"type": "prop",
+			"kind": "pickup",
+			"item": "star",
+			"icon": "star",
+			"know": "lever_route"
+		},
+		"g": {
+			"type": "prop",
+			"kind": "pickup",
+			"item": "hourglass",
+			"icon": "hourglass",
+			"time": 8,
+			"why": "성소의 모래시계!"
+		},
+		"o": {
+			"type": "prop",
+			"kind": "pot"
+		},
+		"$": {
+			"type": "enemy",
+			"kind": "time_beetle",
+			"stats": {
+				"lv": 4
+			}
+		},
+		"s": {
+			"type": "enemy",
+			"kind": "stone_soldier",
+			"stats": {
+				"lv": 1
+			}
+		},
+		"S": {
+			"type": "enemy",
+			"kind": "stone_soldier",
+			"stats": {
+				"lv": 4
+			}
+		},
+		"z": {
+			"type": "enemy",
+			"kind": "stone_soldier",
+			"stats": {
+				"lv": 6
+			}
+		},
+		"w": {
+			"type": "enemy",
+			"kind": "wisp",
+			"stats": {
+				"lv": 1,
+				"fire_rate": 3.2
+			}
+		},
+		"W": {
+			"type": "enemy",
+			"kind": "wisp",
+			"stats": {
+				"lv": 5
+			}
+		},
+		"Z": {
+			"type": "enemy",
+			"kind": "wisp",
+			"stats": {
+				"lv": 7
+			}
+		}
+	},
+	"npcs": {
+		"rival": {
+			"name": "기사 레온",
+			"sprite": "npc_rival",
+			"portrait": "rival",
+			"pitch": 1.0,
+			"talk": [
+				{
+					"if": [
+						"met"
+					],
+					"once": true,
+					"lines": [
+						"…너, 어디서 봤지? 이상하군. 이 열쇠, 네가 가져가.",
+						"왠지 그래야 할 것 같아. 거울 기사는… 등이 약점이다."
+					],
+					"do": [
+						[
+							"item",
+							"key",
+							1
+						],
+						[
+							"know",
+							"key_gate"
+						],
+						[
+							"know",
+							"knight_back"
+						]
+					]
+				},
+				{
+					"important": true,
+					"once": true,
+					"lines": [
+						{
+							"voice": "s5_rival"
+						},
+						"정문 열쇠는 내가 갖고 있다. 넌 옆문으로 빙 돌아오든가!"
+					],
+					"do": [
+						[
+							"know",
+							"key_gate"
+						],
+						[
+							"flag",
+							"rival_left"
+						],
+						[
+							"remove",
+							"rival"
+						],
+						[
+							"spawn_npc",
+							"rival_down"
+						]
+					]
+				}
+			]
+		},
+		"rival_down": {
+			"name": "기사 레온",
+			"sprite": "npc_rival",
+			"portrait": "rival",
+			"pitch": 0.9,
+			"flip": true,
+			"talk": [
+				{
+					"once": true,
+					"important": true,
+					"lines": [
+						"크윽… 앞에서는 절대 안 뚫려… 등을… 노려…",
+						"이 열쇠로 정문을 열어라… 다음엔… 처음부터 너한테 줄게…"
+					],
+					"do": [
+						[
+							"item",
+							"key",
+							1
+						],
+						[
+							"know",
+							"knight_back"
+						],
+						[
+							"know",
+							"key_gate"
+						]
+					]
+				},
+				{
+					"lines": [
+						"…등을 노려라…"
+					]
+				}
+			]
+		},
+		"merchant": {
+			"name": "행상 미나",
+			"sprite": "npc_merchant",
+			"portrait": "merchant",
+			"pitch": 1.25,
+			"shop": "s5shop",
+			"talk": [
+				{
+					"lines": [
+						"신전 기념품…은 없고, 튼튼한 갑옷은 있어!"
+					],
+					"do": [
+						[
+							"shop",
+							"s5shop"
+						]
+					]
+				}
+			]
+		}
+	},
+	"shops": {
+		"s5shop": {
+			"title": "미나의 행상",
+			"items": [
+				"iron_sword",
+				"iron_armor",
+				"herb"
+			]
+		}
+	},
+	"boss": {
+		"kind": "mirror_knight",
+		"trigger": 110,
+		"know": "knight_seen",
+		"lines": [
+			{
+				"voice": "s5_boss"
+			}
+		]
+	},
+	"knowledge": {
+		"key_gate": {
+			"text": "레온의 열쇠: 입구 광장 정문 → 회랑 직행 (한 번 열면 계속 열림)",
+			"marker": "K"
+		},
+		"knight_back": {
+			"text": "거울 기사는 정면을 막는다 → 돌진 직후 '빈틈' 때 등을 노려라"
+		},
+		"lever_route": {
+			"text": "양쪽 성소 레버로 회랑 옆문이 열린다 (되감아도 유지)"
+		},
+		"knight_seen": {
+			"text": "거울 기사는 북쪽 성소. 권장 Lv8 · 다음부터 돌진을 '예측'할 수 있다"
+		},
+		"timeshop": {
+			"text": "고양이 석상: 골드를 시간으로 바꾼다. 부활 지점도 된다"
+		}
+	},
+	"goals": [
+		{
+			"if": [
+				"item:key",
+				"!cut:keygate"
+			],
+			"text": "레온의 열쇠로 정문을 열자!",
+			"marker": "K"
+		},
+		{
+			"if": [
+				"gold>=30",
+				"!watk>=6"
+			],
+			"text": "철검을 살 돈이 모였다! 광장의 미나에게",
+			"marker": "M"
+		},
+		{
+			"if": [
+				"!talked:rival",
+				"!cut:keygate",
+				"!cut:lever_w",
+				"!cut:lever_e"
+			],
+			"text": "라이벌 기사 레온에게 말을 걸어 보자",
+			"marker": "V"
+		},
+		{
+			"if": [
+				"!cut:keygate",
+				"!cut:lever_w",
+				"!cut:lever_e",
+				"!item:key",
+				"!lv>=4"
+			],
+			"text": "성소는 위험하다. 광장 주변에서 레벨을 올리자",
+			"marker": "L",
+			"grind": true
+		},
+		{
+			"if": [
+				"!cut:keygate",
+				"!cut:lever_w",
+				"!cut:lever_e",
+				"!item:key"
+			],
+			"text": "서쪽 성소의 레버로 옆문을 열자",
+			"marker": "L"
+		},
+		{
+			"if": [
+				"!lv>=8"
+			],
+			"text": "레벨을 올리자 (권장 Lv8)",
+			"marker": "boss",
+			"grind": true
+		},
+		{
+			"text": "거울 기사를 쓰러뜨려라! 등을 노려라",
+			"marker": "boss"
+		}
+	],
+	"hints": [
+		{
+			"at": 0.5,
+			"text": "정문은 잠겨 있다. 열쇠를 찾거나, 양쪽 성소의 레버를 당기자",
+			"dur": 5
+		}
+	],
+	"tips": [
+		{
+			"if": [
+				"boss_seen"
+			],
+			"text": "정면은 막힌다. 돌진이 끝나고 '빈틈!'이 뜨면 등 뒤로 대시"
+		},
+		{
+			"if": [
+				"!cut:keygate",
+				"!cut:lever_w",
+				"!cut:lever_e"
+			],
+			"text": "레버나 열쇠로 연 문은 되감아도 열려 있다"
+		},
+		{
+			"if": [
+				"talked:rival"
+			],
+			"text": "레온과는 다음 루프에 다시 이야기해 보자"
+		}
+	],
+	"intro": [
+		{
+			"voice": "s5_intro_1"
+		},
+		{
+			"who": "hero",
+			"text": "앞모습만… 그럼 뒤로 돌아가면 되겠네."
+		}
+	],
+	"clear_lines": [
+		{
+			"who": "chocho",
+			"text": "거울이 깨졌다냥! 다음은 불타는 화산이다냥…"
+		}
+	],
+	"fail": {
+		"text": "종이 울려 거울 속 시간이 굳었다…"
+	}
+}

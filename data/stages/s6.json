@@ -1,0 +1,386 @@
+{
+	"id": "s6",
+	"index": 6,
+	"name": "불꽃 화산",
+	"subtitle": "차오르는 용암",
+	"blurb": "시간이 흐를수록 낮은 땅부터 용암에 잠긴다. 대장간과 고양이 석상에 들를 순서가 승부를 가른다.",
+	"map": "res://data/maps/s6.txt",
+	"theme": "volcano",
+	"time": 60,
+	"music": "volcano",
+	"boss_music": "boss",
+	"rec_level": 8,
+	"tint": "fff0e6",
+	"start": {
+		"gold": 15,
+		"weapon": "wood_sword"
+	},
+	"timeshop": {
+		"price": [
+			10,
+			25,
+			50,
+			90
+		],
+		"sec": 15
+	},
+	"lava": [
+		{
+			"at": 40,
+			"marker": "8",
+			"warn": "대장간 쪽 저지대가 곧 잠긴다!",
+			"know": "flood_40"
+		},
+		{
+			"at": 22,
+			"marker": "9",
+			"warn": "동쪽 저지대(고양이 석상)가 곧 잠긴다!",
+			"know": "flood_22"
+		}
+	],
+	"speakers": {
+		"drake": {
+			"name": "화염룡 이그니스",
+			"portrait": "boss_fire_drake",
+			"pitch": 0.5
+		}
+	},
+	"markers": {
+		"Q": {
+			"type": "npc",
+			"id": "smith"
+		},
+		"N": {
+			"type": "npc",
+			"id": "merchant"
+		},
+		"C": {
+			"type": "prop",
+			"kind": "statue"
+		},
+		"P": {
+			"type": "prop",
+			"kind": "sign",
+			"text": [
+				"↗ 화산 정상   ↓ 대장간 (저지대: 40초에 잠김 주의!)"
+			]
+		},
+		"X": {
+			"type": "prop",
+			"kind": "chest",
+			"id": "ch",
+			"give_list": [
+				[
+					[
+						"gold",
+						25
+					]
+				],
+				[
+					[
+						"item",
+						"herb",
+						2
+					]
+				],
+				[
+					[
+						"gold",
+						20
+					]
+				]
+			]
+		},
+		"*": {
+			"type": "prop",
+			"kind": "pickup",
+			"item": "star",
+			"icon": "star",
+			"know": "flood_40"
+		},
+		"g": {
+			"type": "prop",
+			"kind": "pickup",
+			"item": "hourglass",
+			"icon": "hourglass",
+			"time": 8,
+			"why": "능선의 모래시계!"
+		},
+		"$": {
+			"type": "enemy",
+			"kind": "time_beetle",
+			"stats": {
+				"lv": 4
+			}
+		},
+		"s": {
+			"type": "enemy",
+			"kind": "salamander",
+			"stats": {
+				"lv": 1
+			}
+		},
+		"S": {
+			"type": "enemy",
+			"kind": "salamander",
+			"stats": {
+				"lv": 3
+			}
+		},
+		"x": {
+			"type": "enemy",
+			"kind": "salamander",
+			"stats": {
+				"lv": 6
+			}
+		},
+		"r": {
+			"type": "enemy",
+			"kind": "ore_beetle",
+			"stats": {
+				"lv": 4
+			}
+		},
+		"b": {
+			"type": "enemy",
+			"kind": "bat",
+			"stats": {
+				"lv": 2
+			}
+		},
+		"k": {
+			"type": "enemy",
+			"kind": "ore_beetle",
+			"stats": {
+				"lv": 7
+			}
+		}
+	},
+	"npcs": {
+		"smith": {
+			"name": "대장장이 카야",
+			"sprite": "npc_smith",
+			"portrait": "smith",
+			"pitch": 1.1,
+			"shop": "s6forge",
+			"talk": [
+				{
+					"if": [
+						"met"
+					],
+					"lines": [
+						"이상하네, 너 올 줄 알고 미리 벼려 뒀지! 특별가로 줄게. 얼른 가져가!"
+					],
+					"do": [
+						[
+							"know",
+							"smith_sword"
+						],
+						[
+							"shop",
+							"s6friend"
+						]
+					]
+				},
+				{
+					"important": true,
+					"lines": [
+						{
+							"voice": "s6_smith"
+						},
+						"화염검 70골드, 화염 방어구 60골드! 이 대장간은 40초가 되면 용암에 잠기니까 서둘러!"
+					],
+					"do": [
+						[
+							"know",
+							"smith_sword"
+						],
+						[
+							"know",
+							"flood_40"
+						],
+						[
+							"shop",
+							"s6forge"
+						]
+					]
+				}
+			]
+		},
+		"merchant": {
+			"name": "행상 미나",
+			"sprite": "npc_merchant",
+			"portrait": "merchant",
+			"pitch": 1.25,
+			"shop": "s6shop",
+			"talk": [
+				{
+					"lines": [
+						"여긴 높아서 안전해! 저 아래 대장간은… 서두르는 게 좋을걸?"
+					],
+					"do": [
+						[
+							"shop",
+							"s6shop"
+						]
+					]
+				}
+			]
+		}
+	},
+	"shops": {
+		"s6forge": {
+			"title": "카야의 대장간",
+			"items": [
+				"flame_sword",
+				"flame_armor",
+				"iron_sword"
+			]
+		},
+		"s6friend": {
+			"title": "카야의 대장간 (단골가)",
+			"items": [
+				"flame_sword",
+				"flame_armor",
+				"iron_sword"
+			],
+			"prices": {
+				"flame_sword": 45,
+				"flame_armor": 40,
+				"iron_sword": 20
+			}
+		},
+		"s6shop": {
+			"title": "미나의 행상",
+			"items": [
+				"iron_sword",
+				"leather_armor",
+				"herb"
+			]
+		}
+	},
+	"boss": {
+		"kind": "fire_drake",
+		"trigger": 120,
+		"know": "drake_seen",
+		"lines": [
+			{
+				"voice": "s6_boss"
+			}
+		]
+	},
+	"knowledge": {
+		"flood_40": {
+			"text": "40초: 대장간 쪽 남쪽 저지대가 용암에 잠긴다",
+			"marker": "Q"
+		},
+		"flood_22": {
+			"text": "22초: 동쪽 저지대(고양이 석상)가 용암에 잠긴다",
+			"marker": "C"
+		},
+		"smith_sword": {
+			"text": "대장장이 카야: 화염검 70G · 화염 방어구 60G"
+		},
+		"drake_perch": {
+			"text": "이그니스는 내려앉아 있을 때만 크게 다친다. 날 때는 무적"
+		},
+		"drake_seen": {
+			"text": "이그니스는 북동쪽 정상. 권장 Lv8"
+		},
+		"timeshop": {
+			"text": "고양이 석상: 골드를 시간으로 바꾼다. 부활 지점도 된다"
+		}
+	},
+	"goals": [
+		{
+			"if": [
+				"!flag:flooded:8",
+				"!item:flame_sword",
+				"gold>=45"
+			],
+			"text": "용암이 차기 전에 대장간으로!",
+			"marker": "Q"
+		},
+		{
+			"if": [
+				"!flag:flooded:8",
+				"!talked:smith"
+			],
+			"text": "대장장이 카야를 찾자 (40초에 잠김)",
+			"marker": "Q"
+		},
+		{
+			"if": [
+				"gold>=30",
+				"!watk>=6"
+			],
+			"text": "철검이라도! 베이스캠프의 미나에게",
+			"marker": "N"
+		},
+		{
+			"if": [
+				"!lv>=8"
+			],
+			"text": "레벨을 올리자 (권장 Lv8)",
+			"marker": "boss",
+			"grind": true
+		},
+		{
+			"text": "화염룡 이그니스를 쓰러뜨려라!",
+			"marker": "boss"
+		}
+	],
+	"hints": [
+		{
+			"at": 0.5,
+			"text": "시간이 지나면 낮은 땅부터 용암에 잠긴다! 들를 순서를 정하자",
+			"dur": 5,
+			"always": true
+		}
+	],
+	"on_boss": [
+		{
+			"if": [
+				"!know:drake_perch"
+			],
+			"do": [
+				[
+					"know",
+					"drake_perch"
+				]
+			]
+		}
+	],
+	"tips": [
+		{
+			"if": [
+				"!item:flame_sword"
+			],
+			"text": "대장간은 40초에 잠긴다. 첫 20초 안에 화염검을!"
+		},
+		{
+			"if": [
+				"boss_seen"
+			],
+			"text": "이그니스가 내려앉아 있을 때 공격하자. 날아오를 땐 무적"
+		}
+	],
+	"intro": [
+		{
+			"voice": "s6_intro_1"
+		},
+		{
+			"who": "hero",
+			"text": "어디부터 들를지… 순서가 전부구나."
+		}
+	],
+	"clear_lines": [
+		{
+			"who": "chocho",
+			"text": "마지막 톱니다냥! 이제 시계탑의 문이 열린다냥…!"
+		}
+	],
+	"fail": {
+		"text": "종이 울려 용암마저 굳어 버렸다…"
+	}
+}

@@ -1,0 +1,18 @@
+# Godot cache / editor state
+.godot/
+*.translation
+export_credentials.cfg
+
+# build output (re-create with the export command in README)
+build/
+
+# pipeline scratch: rendered wavs, screenshots, previews
+tools/_*/
+tools/voice_raw/
+__pycache__/
+*.pyc
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.tmp

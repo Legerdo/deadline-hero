@@ -1,0 +1,422 @@
+{
+	"id": "s3",
+	"index": 3,
+	"name": "어둠의 광산",
+	"subtitle": "광석 골렘의 심장",
+	"blurb": "빛이 닿지 않는 광산. 한 번 지나간 길은 지도에 남고, 밝힌 수정과 부순 벽은 되감아도 그대로다.",
+	"map": "res://data/maps/s3.txt",
+	"theme": "cave",
+	"dark": true,
+	"time": 60,
+	"music": "cave",
+	"boss_music": "boss",
+	"rec_level": 7,
+	"start": {
+		"gold": 15,
+		"weapon": "wood_sword"
+	},
+	"timeshop": {
+		"price": [
+			10,
+			25,
+			50,
+			90
+		],
+		"sec": 15
+	},
+	"markers": {
+		"D": {
+			"type": "npc",
+			"id": "miner"
+		},
+		"M": {
+			"type": "npc",
+			"id": "merchant"
+		},
+		"C": {
+			"type": "prop",
+			"kind": "statue"
+		},
+		"Q": {
+			"type": "prop",
+			"kind": "cart",
+			"path": [
+				"5",
+				"6"
+			],
+			"need_cut": "cart",
+			"know": "cart_lever"
+		},
+		"t": {
+			"type": "prop",
+			"kind": "torch"
+		},
+		"Y": {
+			"type": "prop",
+			"kind": "crystal",
+			"id": "cr"
+		},
+		"W": {
+			"type": "prop",
+			"kind": "crack",
+			"shortcut": "crack",
+			"need": "pickaxe",
+			"hint": "금 간 벽… 곡괭이가 필요하다"
+		},
+		"L": {
+			"type": "prop",
+			"kind": "lever",
+			"id": "lever",
+			"shortcut": "cart",
+			"do": [
+				[
+					"toast",
+					"광차 선로가 연결됐다! (되감아도 유지)",
+					"echo"
+				]
+			]
+		},
+		"5": {
+			"type": "point"
+		},
+		"6": {
+			"type": "point"
+		},
+		"X": {
+			"type": "prop",
+			"kind": "chest",
+			"id": "ch",
+			"give_list": [
+				[
+					[
+						"gold",
+						20
+					]
+				],
+				[
+					[
+						"item",
+						"herb",
+						2
+					]
+				]
+			]
+		},
+		"*": {
+			"type": "prop",
+			"kind": "pickup",
+			"item": "star",
+			"icon": "star",
+			"know": "crack_pickaxe"
+		},
+		"g": {
+			"type": "prop",
+			"kind": "pickup",
+			"item": "hourglass",
+			"icon": "hourglass",
+			"time": 8,
+			"why": "숨은 동굴의 모래시계!"
+		},
+		"$": {
+			"type": "enemy",
+			"kind": "time_beetle",
+			"stats": {
+				"lv": 3
+			}
+		},
+		"b": {
+			"type": "enemy",
+			"kind": "bat",
+			"stats": {
+				"lv": 1
+			}
+		},
+		"v": {
+			"type": "enemy",
+			"kind": "bat",
+			"stats": {
+				"lv": 3
+			}
+		},
+		"r": {
+			"type": "enemy",
+			"kind": "ore_beetle",
+			"stats": {
+				"lv": 3
+			}
+		},
+		"R": {
+			"type": "enemy",
+			"kind": "ore_beetle",
+			"stats": {
+				"lv": 5
+			}
+		},
+		"E": {
+			"type": "enemy",
+			"kind": "ore_beetle",
+			"stats": {
+				"lv": 7
+			}
+		}
+	},
+	"npcs": {
+		"miner": {
+			"name": "광부 도르",
+			"sprite": "npc_miner",
+			"portrait": "miner",
+			"pitch": 0.85,
+			"shop": "s3pick",
+			"talk": [
+				{
+					"if": [
+						"met",
+						"!item:pickaxe"
+					],
+					"once": true,
+					"lines": [
+						"…자네 얼굴, 꿈에서 봤나? 이상하군. 곡괭이 가져가게. 공짜야!",
+						"금 간 벽을 부수면 그 길은 계속 열려 있을 걸세."
+					],
+					"do": [
+						[
+							"item",
+							"pickaxe",
+							1
+						],
+						[
+							"know",
+							"crack_pickaxe"
+						],
+						[
+							"know",
+							"golem_core"
+						]
+					]
+				},
+				{
+					"important": true,
+					"once": true,
+					"lines": [
+						{
+							"voice": "s3_miner"
+						},
+						"금 간 벽은 곡괭이로 부술 수 있지. 25골드에 팔겠네. 부순 벽은 되감아도 그대로야."
+					],
+					"do": [
+						[
+							"know",
+							"golem_core"
+						],
+						[
+							"know",
+							"crack_pickaxe"
+						],
+						[
+							"shop",
+							"s3pick"
+						]
+					]
+				},
+				{
+					"lines": [
+						"광차는 깊은 곳의 레버로 선로를 바꿔야 움직여. 한 번 바꾸면 계속 쓸 수 있지!"
+					],
+					"do": [
+						[
+							"know",
+							"cart_lever"
+						],
+						[
+							"shop",
+							"s3pick"
+						]
+					]
+				}
+			]
+		},
+		"merchant": {
+			"name": "행상 미나",
+			"sprite": "npc_merchant",
+			"portrait": "merchant",
+			"pitch": 1.25,
+			"shop": "s3shop",
+			"talk": [
+				{
+					"lines": [
+						"어두운 데서 장사하려니 무섭다구… 뭐 살래?"
+					],
+					"do": [
+						[
+							"shop",
+							"s3shop"
+						]
+					]
+				}
+			]
+		}
+	},
+	"shops": {
+		"s3pick": {
+			"title": "도르의 연장",
+			"items": [
+				"pickaxe",
+				"herb"
+			]
+		},
+		"s3shop": {
+			"title": "미나의 행상",
+			"items": [
+				"iron_sword",
+				"leather_armor",
+				"herb"
+			]
+		}
+	},
+	"boss": {
+		"kind": "golem",
+		"trigger": 110,
+		"know": "golem_seen",
+		"lines": []
+	},
+	"knowledge": {
+		"map_memory": {
+			"text": "한 번 지나간 길은 지도에 남는다 (되감아도 유지)"
+		},
+		"golem_core": {
+			"text": "골렘은 땅을 내리친 직후에만 가슴의 핵이 열린다 → 그때 큰 피해"
+		},
+		"crack_pickaxe": {
+			"text": "금 간 벽은 곡괭이로 부순다 (부순 벽은 되감아도 그대로)"
+		},
+		"cart_lever": {
+			"text": "광차: 깊은 곳 레버로 선로를 바꾸면 골렘 앞까지 한 번에",
+			"marker": "L"
+		},
+		"time_beetle": {
+			"text": "서쪽 숨은 동굴에 황금 시간벌레가 산다 (경험치 대박)"
+		},
+		"golem_seen": {
+			"text": "골렘은 북동쪽 대전당. 권장 Lv7"
+		},
+		"timeshop": {
+			"text": "고양이 석상: 골드를 시간으로 바꾼다. 부활 지점도 된다"
+		}
+	},
+	"goals": [
+		{
+			"if": [
+				"!know:crack_pickaxe",
+				"!item:pickaxe"
+			],
+			"text": "광부 도르에게 이야기를 듣자",
+			"marker": "D"
+		},
+		{
+			"if": [
+				"gold>=30",
+				"!watk>=6"
+			],
+			"text": "철검을 살 돈이 모였다! 캠프의 미나에게",
+			"marker": "M"
+		},
+		{
+			"if": [
+				"!lv>=4"
+			],
+			"text": "박쥐와 벌레로 레벨을 올리자",
+			"marker": "boss",
+			"grind": true
+		},
+		{
+			"if": [
+				"know:cart_lever",
+				"!cut:cart",
+				"!lv>=7"
+			],
+			"text": "깊은 곳 레버로 광차 선로를 바꾸자",
+			"marker": "L"
+		},
+		{
+			"if": [
+				"!lv>=7"
+			],
+			"text": "레벨을 올리자 (권장 Lv7)",
+			"marker": "boss",
+			"grind": true
+		},
+		{
+			"text": "광석 골렘을 쓰러뜨려라!",
+			"marker": "boss"
+		}
+	],
+	"hints": [
+		{
+			"at": 0.5,
+			"text": "어둡다! 수정에 부딪혀 불을 켜 두면 되감아도 계속 밝다",
+			"dur": 5,
+			"always": true
+		},
+		{
+			"at": 3,
+			"if": [
+				"cut:cart"
+			],
+			"text": "광차가 움직인다! 캠프의 광차를 타면 골렘 앞까지 한 번에",
+			"always": true
+		}
+	],
+	"on_start": [
+		{
+			"if": [
+				"!know:map_memory"
+			],
+			"do": [
+				[
+					"know",
+					"map_memory"
+				]
+			]
+		}
+	],
+	"tips": [
+		{
+			"if": [
+				"!item:pickaxe",
+				"!know:crack_pickaxe"
+			],
+			"text": "도르의 곡괭이로 금 간 벽을 부수면 지름길이 영구히 열린다"
+		},
+		{
+			"if": [
+				"boss_seen",
+				"!know:golem_core"
+			],
+			"text": "골렘은 평소엔 거의 안 다친다. 땅을 내리친 직후 핵을 노려라"
+		},
+		{
+			"if": [
+				"!cut:cart"
+			],
+			"text": "깊은 곳 레버를 당겨 두면, 다음 루프부터 광차로 골렘 앞까지 간다"
+		}
+	],
+	"intro": [
+		{
+			"voice": "s3_intro_1"
+		},
+		{
+			"who": "hero",
+			"text": "수정을 밝혀 두면 다음 루프가 편해지겠어."
+		}
+	],
+	"clear_lines": [
+		{
+			"who": "chocho",
+			"text": "광산의 톱니도 찾았다냥! 다음은… 으스스한 저택이다냥."
+		}
+	],
+	"fail": {
+		"text": "종이 울려 광산의 등불이 멎었다…"
+	}
+}

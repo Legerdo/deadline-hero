@@ -1,0 +1,452 @@
+{
+	"id": "s1",
+	"index": 1,
+	"name": "새싹 초원",
+	"subtitle": "킹 슬라임의 반란",
+	"blurb": "킹 슬라임이 마을의 시간 톱니를 삼켰다. 슬라임을 잡아 성장하고, 철검을 사서 언덕 위의 왕을 쓰러뜨려라.",
+	"map": "res://data/maps/s1.txt",
+	"theme": "village",
+	"time": 60,
+	"music": "field",
+	"boss_music": "boss",
+	"rec_level": 5,
+	"start": {
+		"gold": 10,
+		"weapon": "wood_sword"
+	},
+	"timeshop": {
+		"price": [
+			10,
+			25,
+			50,
+			90
+		],
+		"sec": 15
+	},
+	"speakers": {
+		"king": {
+			"name": "킹 슬라임",
+			"portrait": "boss_king_slime",
+			"pitch": 0.6
+		}
+	},
+	"markers": {
+		"H": {
+			"type": "prop",
+			"kind": "house_red"
+		},
+		"h": {
+			"type": "prop",
+			"kind": "house_blue"
+		},
+		"W": {
+			"type": "prop",
+			"kind": "well",
+			"text": [
+				"깊은 우물이다. 바닥에서 째깍째깍 소리가 들린다…"
+			]
+		},
+		"P": {
+			"type": "prop",
+			"kind": "sign",
+			"text": [
+				"↗ 킹 슬라임의 언덕   ← 새싹 마을"
+			]
+		},
+		"C": {
+			"type": "prop",
+			"kind": "statue"
+		},
+		"E": {
+			"type": "npc",
+			"id": "elder"
+		},
+		"M": {
+			"type": "npc",
+			"id": "merchant"
+		},
+		"K": {
+			"type": "npc",
+			"id": "kid"
+		},
+		"X": {
+			"type": "prop",
+			"kind": "chest",
+			"id": "grove",
+			"give": [
+				[
+					"gold",
+					25
+				]
+			]
+		},
+		"Y": {
+			"type": "prop",
+			"kind": "chest",
+			"id": "east",
+			"give": [
+				[
+					"item",
+					"herb",
+					1
+				],
+				[
+					"gold",
+					10
+				]
+			]
+		},
+		"Z": {
+			"type": "prop",
+			"kind": "chest",
+			"id": "north",
+			"give": [
+				[
+					"gold",
+					15
+				]
+			]
+		},
+		"*": {
+			"type": "prop",
+			"kind": "pickup",
+			"item": "star",
+			"icon": "star",
+			"know": "s1_secret"
+		},
+		"g": {
+			"type": "prop",
+			"kind": "pickup",
+			"item": "hourglass",
+			"icon": "hourglass",
+			"time": 8,
+			"why": "숲속의 모래시계!"
+		},
+		"1": {
+			"type": "point"
+		},
+		"s": {
+			"type": "enemy",
+			"kind": "slime",
+			"stats": {
+				"lv": 1
+			}
+		},
+		"S": {
+			"type": "enemy",
+			"kind": "slime",
+			"stats": {
+				"lv": 2
+			}
+		},
+		"m": {
+			"type": "enemy",
+			"kind": "mushroom",
+			"stats": {
+				"lv": 2
+			}
+		},
+		"n": {
+			"type": "enemy",
+			"kind": "mushroom",
+			"stats": {
+				"lv": 3
+			}
+		},
+		"b": {
+			"type": "enemy",
+			"kind": "bee",
+			"stats": {
+				"lv": 3
+			}
+		},
+		"v": {
+			"type": "enemy",
+			"kind": "bee",
+			"stats": {
+				"lv": 4
+			}
+		},
+		"w": {
+			"type": "enemy",
+			"kind": "wolf",
+			"stats": {
+				"lv": 5
+			}
+		},
+		"q": {
+			"type": "enemy",
+			"kind": "wolf",
+			"stats": {
+				"lv": 6
+			}
+		}
+	},
+	"npcs": {
+		"elder": {
+			"name": "촌장 모르",
+			"sprite": "npc_elder",
+			"portrait": "elder",
+			"pitch": 0.8,
+			"talk": [
+				{
+					"if": [
+						"met"
+					],
+					"once": true,
+					"lines": [
+						"…자네, 어디선가 본 얼굴이구먼. 이상하게 이걸 먼저 건네야 할 것 같은 기분이 들어.",
+						"킹 슬라임은 착지한 직후가 기회일세. 서두르게!"
+					],
+					"do": [
+						[
+							"item",
+							"herb",
+							2
+						],
+						[
+							"know",
+							"slime_weak"
+						]
+					]
+				},
+				{
+					"important": true,
+					"once": true,
+					"lines": [
+						{
+							"voice": "s1_elder"
+						},
+						"녀석은 크게 뛰어올랐다가 떨어진 직후 잠시 굳어 버린다네. 그때 몰아치게!",
+						"자, 약초 두 개일세. 체력이 떨어지면 알아서 먹게 될 게야."
+					],
+					"do": [
+						[
+							"item",
+							"herb",
+							2
+						],
+						[
+							"know",
+							"slime_weak"
+						]
+					]
+				},
+				{
+					"lines": [
+						"킹 슬라임은 북동쪽 언덕 꼭대기에 있네. 강 건너 늑대들을 조심하게."
+					]
+				}
+			]
+		},
+		"merchant": {
+			"name": "행상 미나",
+			"sprite": "npc_merchant",
+			"portrait": "merchant",
+			"pitch": 1.25,
+			"shop": "s1shop",
+			"talk": [
+				{
+					"if": [
+						"met"
+					],
+					"lines": [
+						"어? 너… 철검 살 거지? 얼굴에 다 쓰여 있어!"
+					],
+					"do": [
+						[
+							"know",
+							"shop_sword"
+						],
+						[
+							"shop",
+							"s1shop"
+						]
+					]
+				},
+				{
+					"lines": [
+						"어서 와! 철검 하나면 슬라임 따윈 한 방이라구!"
+					],
+					"do": [
+						[
+							"know",
+							"shop_sword"
+						],
+						[
+							"shop",
+							"s1shop"
+						]
+					]
+				}
+			]
+		},
+		"kid": {
+			"name": "꼬마 토토",
+			"sprite": "npc_kid",
+			"portrait": "",
+			"pitch": 1.5,
+			"talk": [
+				{
+					"if": [
+						"met",
+						"!know:s1_secret"
+					],
+					"lines": [
+						"형, 나 알아? …숲 틈새 얘기 들으러 온 거지?",
+						"우리 집 위쪽 숲! 나무 사이로 지나갈 수 있어!"
+					],
+					"do": [
+						[
+							"know",
+							"s1_secret"
+						]
+					]
+				},
+				{
+					"if": [
+						"!know:s1_secret"
+					],
+					"important": true,
+					"lines": [
+						"비밀 하나 알려 줄까? 빨간 지붕 집 위쪽 숲에 사람이 지나갈 수 있는 틈이 있어!",
+						"안쪽에서 반짝이는 걸 봤어. 별 같았는데…"
+					],
+					"do": [
+						[
+							"know",
+							"s1_secret"
+						]
+					]
+				},
+				{
+					"lines": [
+						"숲 틈새는 빨간 지붕 집 바로 위야. 나무에 몸을 숨기면 몬스터도 못 찾아!"
+					]
+				}
+			]
+		}
+	},
+	"shops": {
+		"s1shop": {
+			"title": "미나의 행상",
+			"items": [
+				"iron_sword",
+				"leather_armor",
+				"herb"
+			]
+		}
+	},
+	"boss": {
+		"kind": "king_slime",
+		"trigger": 110,
+		"know": "slime_seen",
+		"lines": [
+			{
+				"voice": "s1_boss"
+			}
+		]
+	},
+	"knowledge": {
+		"slime_weak": {
+			"text": "킹 슬라임은 착지 직후 잠시 굳는다 → 그때 연타!"
+		},
+		"shop_sword": {
+			"text": "마을 행상 미나: 철검 30G, 가죽 갑옷 20G"
+		},
+		"s1_secret": {
+			"text": "빨간 지붕 집 위쪽 숲에 숨겨진 샛길이 있다",
+			"marker": "1"
+		},
+		"slime_seen": {
+			"text": "킹 슬라임은 북동쪽 언덕 꼭대기. 권장 Lv5"
+		},
+		"timeshop": {
+			"text": "고양이 석상: 골드를 시간으로 바꾼다. 부활 지점도 된다"
+		}
+	},
+	"goals": [
+		{
+			"if": [
+				"!lv>=3"
+			],
+			"text": "슬라임을 쓰러뜨려 레벨을 올리자!",
+			"marker": "boss",
+			"grind": true
+		},
+		{
+			"if": [
+				"gold>=30",
+				"!watk>=6"
+			],
+			"text": "철검을 살 돈이 모였다! 마을 상인에게",
+			"marker": "M"
+		},
+		{
+			"if": [
+				"!lv>=5"
+			],
+			"text": "레벨을 올리자 (권장 Lv5)",
+			"marker": "boss",
+			"grind": true
+		},
+		{
+			"text": "킹 슬라임을 쓰러뜨려라!",
+			"marker": "boss"
+		}
+	],
+	"hints": [
+		{
+			"at": 0.3,
+			"text": "방향키 이동 · 적에게 부딪히면 공격 · X 대시 박치기",
+			"dur": 6
+		},
+		{
+			"at": 14,
+			"if": [
+				"!talked:elder"
+			],
+			"text": "마을 사람과 이야기하면 도움이 된다 (부딪히거나 Z)"
+		},
+		{
+			"at": 28,
+			"if": [
+				"gold>=30",
+				"!watk>=6"
+			],
+			"text": "30G가 모였다! 상인 미나에게서 철검을 사자"
+		},
+		{
+			"at": 38,
+			"if": [
+				"!flag:timeshop_seen"
+			],
+			"text": "시간이 부족하면 고양이 석상에서 골드로 시간을 사자"
+		}
+	],
+	"intro": [
+		{
+			"voice": "s1_intro_1"
+		},
+		{
+			"who": "hero",
+			"text": "60초 안에 그 녀석을 쓰러뜨리면 되는 거지?"
+		},
+		{
+			"voice": "s1_intro_2"
+		}
+	],
+	"clear_lines": [
+		{
+			"who": "chocho",
+			"text": "톱니를 되찾았다냥! 종소리가 조금 느려졌다냥."
+		},
+		{
+			"who": "hero",
+			"text": "다음은 강 건너 마을이야. 가자, 초초!"
+		}
+	],
+	"fail": {
+		"text": "종이 울려 초원의 시간이 멈췄다…"
+	}
+}

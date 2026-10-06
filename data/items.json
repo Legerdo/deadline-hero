@@ -1,0 +1,19 @@
+{
+	"wood_sword": {"name": "나무검", "type": "weapon", "atk": 2, "price": 0, "icon": "wood_sword", "desc": "연습용 목검"},
+	"iron_sword": {"name": "철검", "type": "weapon", "atk": 6, "price": 30, "icon": "iron_sword", "desc": "믿음직한 쇠 칼날"},
+	"flame_sword": {"name": "화염검", "type": "weapon", "atk": 11, "price": 70, "icon": "flame_sword", "desc": "불꽃이 깃든 검"},
+	"crystal_sword": {"name": "수정검", "type": "weapon", "atk": 16, "price": 120, "icon": "crystal_sword", "desc": "시간의 수정으로 벼린 검"},
+	"leather_armor": {"name": "가죽 갑옷", "type": "armor", "def": 3, "price": 20, "icon": "leather_armor", "desc": "가볍고 튼튼하다"},
+	"iron_armor": {"name": "강철 갑옷", "type": "armor", "def": 7, "price": 55, "icon": "iron_armor", "desc": "묵직한 판금"},
+	"flame_armor": {"name": "화염 방어구", "type": "armor", "def": 9, "price": 60, "icon": "iron_armor", "desc": "용암 열기를 막는다"},
+	"herb": {"name": "약초", "type": "consumable", "price": 8, "icon": "herb", "desc": "HP 30% 이하일 때 자동 사용"},
+	"holy_water": {"name": "성수", "type": "key", "buff": "holy", "price": 40, "icon": "potion", "desc": "유령에게도 칼이 닿게 된다"},
+	"hourglass": {"name": "모래시계", "type": "time", "icon": "hourglass", "desc": "+8초"},
+	"key": {"name": "청동 열쇠", "type": "key", "icon": "key", "desc": "어딘가의 문을 연다"},
+	"planks": {"name": "판자", "type": "key", "icon": "planks", "desc": "다리 수리 재료"},
+	"pickaxe": {"name": "곡괭이", "type": "key", "price": 25, "icon": "pickaxe", "desc": "금 간 벽을 부순다"},
+	"locket": {"name": "은 로켓", "type": "key", "icon": "locket", "desc": "누군가의 초상화가 들어 있다"},
+	"hand_bell": {"name": "작은 종", "type": "key", "icon": "hand_bell", "desc": "맑은 소리가 난다"},
+	"coin": {"name": "금화", "type": "gold", "icon": "coin"},
+	"star": {"name": "시간의 별 조각", "type": "star", "icon": "star", "desc": "비밀의 증표"}
+}
